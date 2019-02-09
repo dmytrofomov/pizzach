@@ -6,6 +6,7 @@ using Data.Repositories;
 using DataLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Pizzach.WebModels;
 
 namespace Pizzach.Controllers
 {
@@ -29,6 +30,18 @@ namespace Pizzach.Controllers
         public List<Pizza> GetAllPizza()
         {
             return PizzaRepository.GetAllPizzas();
+        }
+
+        //[HttpPost("addpizza")]
+        //public Pizza AddPizza([FromBody] PizzaModel pizza)
+        //{
+        //    return PizzaRepository.AddPizza();
+        //}
+
+        [HttpPost("addcomponent")]
+        public async Task<Pizza> AddComponent(int id)
+        {
+            return await PizzaRepository.GetPizzaById(id);
         }
     }
 }
