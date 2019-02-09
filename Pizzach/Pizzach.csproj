@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Managers\Managers.csproj" />
   </ItemGroup>
 
 </Project>

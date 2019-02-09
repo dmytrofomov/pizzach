@@ -6,7 +6,8 @@ using Data.Repositories;
 using DataLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Pizzach.WebModels;
+using Managers.Models;
+using Managers.Managers;
 
 namespace Pizzach.Controllers
 {
@@ -14,34 +15,36 @@ namespace Pizzach.Controllers
     [ApiController]
     public class PizzaController : ControllerBase
     {
-        private PizzaRepository PizzaRepository { get; }
+        private PizzaManager PizzaManager { get; }
 
-        public PizzaController(PizzaRepository pizzaRepository)
+        public PizzaController(PizzaManager pizzaManager)
         {
-            PizzaRepository = pizzaRepository;
+            PizzaManager = pizzaManager;
         }
 
         [HttpGet("{id}")]
         public async Task<Pizza> GetPizzaById(int id)
         {
-            return await PizzaRepository.GetPizzaById(id);
+            return await PizzaManager.GetPizzaById(id);
         }
 
         public List<Pizza> GetAllPizza()
         {
-            return PizzaRepository.GetAllPizzas();
+            return PizzaManager.GetAllPizzas();
         }
 
-        //[HttpPost("addpizza")]
-        //public Pizza AddPizza([FromBody] PizzaModel pizza)
-        //{
-        //    return PizzaRepository.AddPizza();
-        //}
+        [HttpPost("addpizza")]
+        public Task AddPizza([FromBody] PizzaModel pizza)
+        {
+            return PizzaManager.AddPizza(pizza);
+        }
 
         [HttpPost("addcomponent")]
-        public async Task<Pizza> AddComponent(int id)
+        public async Task<bool> AddComponent([FromBody] ComponentModel component)
         {
-            return await PizzaRepository.GetPizzaById(id);
+            return await PizzaManager.AddComponent(component);
         }
     }
+
+    
 }

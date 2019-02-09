@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{5CE48E30-6AF6-4106-BE05-6B6E84705D7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{5CE48E30-6AF6-4106-BE05-6B6E84705D7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzach", "Pizzach\Pizzach.csproj", "{7FBD4E4A-925E-40AB-9D8C-02B9DFD45B8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizzach", "Pizzach\Pizzach.csproj", "{7FBD4E4A-925E-40AB-9D8C-02B9DFD45B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managers", "Managers\Managers.csproj", "{A7170B8C-A287-4BF7-AF36-19FB9E51A55D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7FBD4E4A-925E-40AB-9D8C-02B9DFD45B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FBD4E4A-925E-40AB-9D8C-02B9DFD45B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FBD4E4A-925E-40AB-9D8C-02B9DFD45B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7170B8C-A287-4BF7-AF36-19FB9E51A55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7170B8C-A287-4BF7-AF36-19FB9E51A55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7170B8C-A287-4BF7-AF36-19FB9E51A55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7170B8C-A287-4BF7-AF36-19FB9E51A55D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
