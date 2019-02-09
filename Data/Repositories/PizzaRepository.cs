@@ -18,7 +18,7 @@ namespace Data.Repositories
 
         public List<Pizza> GetAllPizzas()
         {
-            return Db.Pizzas.ToList();
+            return Db.Pizzas.Include(p => p.Ingridients).ThenInclude(i => i.Component).ToList();
         }
 
         public async Task<bool> AddComponent(Component c)

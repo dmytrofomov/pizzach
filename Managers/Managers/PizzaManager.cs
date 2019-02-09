@@ -30,9 +30,32 @@ namespace Managers.Managers
             return await rep.GetPizzaById(id);
         }
 
-        public List<Pizza> GetAllPizzas()
+        public List<PizzaModel> GetAllPizzas()
         {
-            return rep.GetAllPizzas();
+            List<Pizza> pizzas = rep.GetAllPizzas();
+            List<PizzaModel> pizzaModels = new List<PizzaModel>();
+            
+            foreach (var p in pizzas)
+            {
+                List<ComponentModel> componentModel = new List<ComponentModel>();
+
+                foreach (var ingridient in p.Ingridients)
+                {
+                    componentModel.Add(new ComponentModel
+                    {
+                        Name = ingridient.Component.Name,
+                        Price = ingridient.Component.Price,
+                        Weight = ingridient.Component.Weight
+                    });
+                    
+                }
+                pizzaModels.Add(new PizzaModel
+                {
+                    Name = p.Name, Price = p.Price, Size = p.Size, Components = componentModel
+                });
+            }
+
+            return pizzaModels;
         }
 
         public async Task AddPizza(PizzaModel pizza)

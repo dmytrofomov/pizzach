@@ -28,7 +28,7 @@ namespace Pizzach.Controllers
             return await PizzaManager.GetPizzaById(id);
         }
 
-        public List<Pizza> GetAllPizza()
+        public List<PizzaModel> GetAllPizza()
         {
             return PizzaManager.GetAllPizzas();
         }
@@ -45,6 +45,4 @@ namespace Pizzach.Controllers
             return await PizzaManager.AddComponent(component);
         }
     }
-
-    
 }
