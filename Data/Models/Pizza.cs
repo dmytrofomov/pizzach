@@ -12,8 +12,6 @@ namespace DataLayer.Models
     {
         public int Id { get; set; }
 
-        
-
         public string Name { get; set; }
 
         public PizzaSize PizzaSize { get; set; }

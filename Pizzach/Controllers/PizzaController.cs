@@ -25,5 +25,10 @@ namespace Pizzach.Controllers
         {
             return await PizzaRepository.GetPizzaById(id);
         }
+
+        public List<Pizza> GetAllPizza()
+        {
+            return PizzaRepository.GetAllPizzas();
+        }
     }
 }
